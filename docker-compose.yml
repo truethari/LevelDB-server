@@ -1,0 +1,12 @@
+name: leveldb-server
+services:
+  leveldb:
+    build: .
+    container_name: leveldb-server
+    ports:
+      - "6378:6378"
+    volumes:
+      - ./data:/data
+    environment:
+      - API_KEY=my-secret-key
+    restart: always
